@@ -1,0 +1,20 @@
+import json
+Obj = {"a":{"b":{"c":"d"}}}
+
+
+def fnObject(objA):
+    if str(type(objA)) =="<class 'str'>":
+        print(objA)        
+    else:
+        fnObject(list(objA.values())[0] )
+       
+
+try:
+    Obj = input("Please enter object details")
+    Obj=json.loads(Obj)
+    print('Out Put is: ')
+    fnObject(Obj)
+   
+
+except Exception as exp:
+    print(exp)
